@@ -1,45 +1,73 @@
-# Reflective Goal Management System
+This README provides a professional overview of your Reflective Goal Management Web Application, structured for a GitHub repository based on your project documentation.
 
-This project presents the analysis and design of the Reflective Goal Management System, a web-based application aimed at helping users define personal goals, manage milestones, reflect on their experiences, and evaluate the accuracy of their time planning.
+🚀 Reflective Goal Management Web Application
+A specialized frontend-based system designed to move beyond simple "to-do" lists. This application emphasizes self-reflection, learning progress, and time awareness, helping users understand not only what they are working on, but also how and why they progress.
 
-The repository focuses on software engineering analysis and UML-based system design rather than implementation. It was prepared for academic purposes within the scope of a software engineering or information systems course.
+🧪 Project Overview
+Traditional task managers often fail to evaluate time estimates against reality or document lessons learned from failure. This system integrates these missing elements into a single platform to enable continuous personal improvement.
 
-Project Overview
+Key Features
 
-The Reflective Goal Management System enables users to log in securely, create and manage personal goals, divide goals into milestones, and associate learning resources with these milestones. Users can record reflective notes, attach supporting documents, and analyze the difference between estimated and actual time spent on goals. The system also provides visual feedback to help users understand their progress.
+Goal & Milestone Tracking: Define clear goals and break them into manageable milestones.
 
-The primary objective of the project is to model system behavior and structure clearly using UML diagrams.
 
-UML Diagrams
+Integrated Learning Resources: Attach external learning links (YouTube, Udemy, etc.) directly to milestones.
 
-Use Case Scenarios
-Use case scenarios describe the functional requirements of the system, including user authentication, goal creation and management, milestone tracking with learning links, note creation with file attachments, time reality checks, and system-driven feedback.
+Reflective Note-Taking: Record "Lessons Learned," "Ideas," or "Problems" with associated impact levels (Positive/Negative).
 
-Class Diagram
-The class diagram represents the static structure of the system and includes core domain entities and supporting services such as User, Session, Goal, Milestone, LearningResource, Note, Attachment, TimeRealityCheck, and ProgressVisualization.
-The diagram was iteratively refined as system requirements evolved, while preserving the core domain model.
+Time Reality Check: Compare estimated vs. actual completion times with visual feedback (On Track / At Risk).
 
-Sequence Diagram
-A single end-to-end sequence diagram illustrates the dynamic behavior of the system. It demonstrates the interaction flow starting from user login, continuing with goal and milestone creation, note and attachment handling, time analysis and visualization, and ending with user logout.
-The sequence diagram ensures consistency between use case scenarios and the class diagram.
+File Attachments: Upload supporting documents (PDF, DOCX, etc.) to your reflection notes.
 
-Design Approach
 
-The system design follows object-oriented principles and UML standards. A clear separation of concerns is maintained between user interface interactions, domain entities, service-level logic, and visualization components.
-The design process reflects an iterative development approach, where initial models were improved based on detailed requirement analysis.
+Session-Based Security: Simulated authentication and secure logout to protect user data within a session.
 
-Tools Used
+🛠️ Technical Architecture
+This is a frontend-only web application developed with a focus on interaction modeling and user experience.
 
-PlantUML was used for sequence diagram modeling. UML was used for use case and class diagrams. Documentation was prepared as plain text for clarity and academic presentation.
+Languages: HTML5, CSS3, JavaScript (ES6+).
 
-Academic Context
+Design Pattern: Sidebar-based consistent navigation with dynamic view switching.
 
-This project was developed as part of a university-level software engineering or information systems course. It demonstrates requirement analysis, UML modeling, and traceability between use case scenarios, class diagrams, and sequence diagrams.
 
-Author
+Data Handling: Session-based data management (Session Storage).
 
-Furkan Şen
+Visuals: Google Fonts (Inter, Outfit), dynamic progress bars, and status-based color coding.
 
-License
+📊 Usability Insights
+Based on formal usability testing with a diverse group of users (students to working professionals):
 
-This project is intended for educational purposes only.
+Success Rate: 94.4% task completion.
+
+
+Average Satisfaction: 4.65 / 5.
+
+
+Efficiency: Core tasks like "Time Reality Check" or "Goal Creation" are completed in under 30 seconds on average.
+
+📂 System Design
+The project includes comprehensive UML modeling:
+
+Use Case Diagrams: Documenting user interactions like adding personal notes and calculating time reality.
+
+Sequence Diagrams: Detailing the logic for login, goal creation, and the time analysis process.
+
+Class Diagrams: Outlining the relationships between User, Goal, Milestone, and ReflectionNote.
+
+🚀 Future Enhancements
+Full backend and database integration for persistent storage.
+
+Multi-user collaboration features.
+
+Advanced analytics and reporting dashboards.
+
+Enhanced mobile responsiveness.
+
+📝 How to Run
+Since this is a frontend-only application:
+Clone the repository.
+
+Open index.html in any modern web browser (Google Chrome recommended).
+Use any username/password to log in (Simulation).
+
+Academic Context: This project was developed as a structured study on usability, requirement analysis, and software design modeling.
