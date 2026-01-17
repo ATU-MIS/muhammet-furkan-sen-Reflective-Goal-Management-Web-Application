@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline Mockup - My Goal Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --success: #10b981;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-card: #f8fafc;
+            --border-color: #cbd5e1;
+        }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 3rem;
+            color: var(--text-main);
+        }
+
+        .timeline-container {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 1rem;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: -1.95rem; /* Adjust based on border and padding */
+            top: 0.25rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--border-color);
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 1px var(--border-color);
+        }
+
+        /* Marker Variants */
+        .marker-start { background-color: var(--primary); box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2); }
+        .marker-success { background-color: var(--success); box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2); }
+        .marker-note { background-color: #f59e0b; }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-content {
+            background: var(--bg-card);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="timeline-container">
+        <h2 style="margin-bottom: 2rem;">Goal Story</h2>
+        
+        <div class="timeline">
+            
+            <!-- Item 1: Start -->
+            <div class="timeline-item">
+                <div class="timeline-marker marker-start"></div>
+                <div class="timeline-date">Jan 17, 2026 • 09:00 AM</div>
+                <div class="timeline-content">
+                    <div class="timeline-title">Countdown Started</div>
+                    <div class="timeline-desc">Goal "Learn Guitar" created. Target set for 6 months.</div>
+                </div>
+            </div>
+
+            <!-- Item 2: Note -->
+            <div class="timeline-item">
+                <div class="timeline-marker marker-note"></div>
+                <div class="timeline-date">Jan 18, 2026 • 02:30 PM</div>
+                <div class="timeline-content">
+                    <div class="timeline-title">Note Added</div>
+                    <div class="timeline-desc">Found a great YouTube channel for beginners. Attached: <i>beginner_chords.pdf</i></div>
+                </div>
+            </div>
+
+            <!-- Item 3: Milestone -->
+            <div class="timeline-item">
+                <div class="timeline-marker marker-success"></div>
+                <div class="timeline-date">Jan 25, 2026 • 06:15 PM</div>
+                <div class="timeline-content">
+                    <div class="timeline-title">Milestone Unlocked!</div>
+                    <div class="timeline-desc">Completed: "Learn Major Chords". Feels good to make music!</div>
+                </div>
+            </div>
+
+            <!-- Item 4: Start (Example of standard item) -->
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">Feb 01, 2026 • 10:00 AM</div>
+                <div class="timeline-content">
+                    <div class="timeline-title">Routine Check-in</div>
+                    <div class="timeline-desc">Logged 5 hours of practice this week.</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

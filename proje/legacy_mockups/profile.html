@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Profile - My Goal Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .error-message {
+            color: var(--danger);
+            font-size: 0.8rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        .form-input.error, .form-textarea.error {
+            border-color: var(--danger);
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+                        <label class="form-label" for="name">Full Name</label>
+                        <input type="text" id="name" class="form-input" placeholder="e.g., John Doe" required minlength="2">
+                        <div class="error-message" id="error-name">Please enter your name (at least 2 characters).</div>
+                    </div>
+
+                    <!-- Bio Field -->
+                    <div class="form-group">
+                        <label class="form-label" for="bio">Short Biography</label>
+                        <textarea id="bio" class="form-textarea" rows="4" placeholder="What drives you?" required></textarea>
+                         <div class="error-message" id="error-bio">Please tell us a little about yourself.</div>
+                    </div>
+
+                    <!-- Interests/Tags Field -->
+                    <div class="form-group">
+                        <label class="form-label" for="interests">Interests (comma separated)</label>
+                        <input type="text" id="interests" class="form-input" placeholder="e.g., Coding, Fitness, Reading">
+                        <!-- Optional field, so no strict validation needed usually, but let's just make sure it's not script injection if we were processing it -->
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Save Profile</button>
+                </form>
+            </div>
+        </main>
+            </main>
+        </div>
+    </div>
+    <script src="js/ui-sidebar.js"></script>
+    <script>
+        document.getElementById('profile-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validation Flags
+            let isValid = true;
+            
+            // clear previous errors
+            document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.form-input, .form-textarea').forEach(el => el.classList.remove('error'));
+
+            // Validate Name
+            const nameInput = document.getElementById('name');
+            const nameValue = nameInput.value.trim();
+            if (nameValue.length < 2) {
+                isValid = false;
+                nameInput.classList.add('error');
+                document.getElementById('error-name').style.display = 'block';
+            }
+
+            // Validate Bio
+            const bioInput = document.getElementById('bio');
+            const bioValue = bioInput.value.trim();
+            if (bioValue.length === 0) {
+                isValid = false;
+                bioInput.classList.add('error');
+                document.getElementById('error-bio').style.display = 'block';
+            }
+
+            if (isValid) {
+                // Success Simulation
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                
+                submitBtn.textContent = "Saving...";
+                submitBtn.style.backgroundColor = "var(--success)";
+                
+                setTimeout(() => {
+                    alert(`Profile Saved!\nName: ${nameValue}\nInterests: ${document.getElementById('interests').value}`);
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.backgroundColor = ""; // reset to default
+                }, 800);
+            }
+        });
+    </script>
+</body>
+</html>

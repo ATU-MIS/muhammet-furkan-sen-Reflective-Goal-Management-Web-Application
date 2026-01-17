@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Goal Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+</head>
+<body>
+    <div id="app">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <span class="sidebar-logo-icon">🚀</span>
+                <span>Goal Journey</span>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" onclick="event.preventDefault(); app.switchView('dashboard')" data-view="dashboard">
+                    <span class="sidebar-icon">📊</span> Dashboard
+                </a>
+                <a href="#" class="sidebar-link" onclick="event.preventDefault(); app.switchView('profile')" data-view="profile">
+                    <span class="sidebar-icon">👤</span> Create Profile
+                </a>
+                <a href="#" class="sidebar-link" onclick="event.preventDefault(); app.switchView('add-goal')" data-view="add-goal">
+                    <span class="sidebar-icon">🎯</span> Add Goal
+                </a>
+                <a href="#" class="sidebar-link" onclick="event.preventDefault(); app.switchView('my-goals')" data-view="my-goals">
+                    <span class="sidebar-icon">📝</span> My Goals
+                </a>
+                <!-- Goal Details is contextual, removing direct link or making it link to 'my-goals' instead -->
+                
+                <a href="#" class="sidebar-link" onclick="event.preventDefault(); app.switchView('notes')" data-view="notes">
+                    <span class="sidebar-icon">📌</span> Notes
+                </a>
+                <a href="#" class="sidebar-link" onclick="event.preventDefault(); app.switchView('milestones')" data-view="milestones">
+                    <span class="sidebar-icon">🚩</span> Milestones
+                </a>
+                <a href="#" class="sidebar-link" onclick="event.preventDefault(); app.switchView('goal-story')" data-view="goal-story">
+                    <span class="sidebar-icon">⏳</span> Goal Story
+                </a>
+                <a href="#" class="sidebar-link" onclick="event.preventDefault(); app.switchView('failure-log')" data-view="failure-log">
+                    <span class="sidebar-icon">📉</span> Failure Log
+                </a>
+                <a href="#" class="sidebar-link" onclick="event.preventDefault(); app.switchView('time-reality-check')" data-view="time-reality-check">
+                    <span class="sidebar-icon">⏱️</span> Time Reality Check
+                </a>
+                <div style="margin-top: auto; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+                    <a href="#" class="sidebar-link" onclick="event.preventDefault(); app.handlers.logout()" style="color: var(--danger);">
+                        <span class="sidebar-icon">🚪</span> Logout
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content Wrapper -->
+        <div class="main-content-wrapper">
+            <!-- Top Header (Simplified) -->
+            <header class="main-header" style="justify-content: space-between; position: sticky; top: 0; z-index: 100;">
+                <!-- Reality Check Progress Bar (Hidden by default) -->
+                <div id="header-progress-bar" class="header-progress-bar hidden">
+                    <div id="header-progress-fill" class="header-progress-fill"></div>
+                </div>
+                
+                <!-- Mobile Toggle -->
+                <button id="mobile-menu-toggle" class="mobile-menu-toggle" onclick="app.handlers.toggleSidebar()">
+                    ☰
+                </button>
+
+                <!-- Date & Time Display -->
+                <div id="header-datetime" class="header-datetime"></div>
+
+                <!-- User Preview -->
+                <div class="user-preview" id="userPreview">
+                    <!-- User info will be injected here -->
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <!-- Main Content Area -->
+            <main id="main-content" class="container">
+                
+                <!-- Dashboard Section -->
+                <section id="section-dashboard" class="view-section">
+                    <!-- Dynamic Dashboard Content -->
+                </section>
+
+                <!-- Profile Section -->
+                <section id="section-profile" class="view-section hidden">
+                    <!-- Dynamic Profile Content -->
+                </section>
+
+                <!-- Add Goal Section -->
+                <section id="section-add-goal" class="view-section hidden">
+                    <!-- Dynamic Add Goal Content -->
+                </section>
+
+                <!-- My Goals Section -->
+                <section id="section-my-goals" class="view-section hidden">
+                    <!-- Dynamic My Goals Content -->
+                </section>
+
+                <!-- Global Notes Section -->
+                <section id="section-notes" class="view-section hidden">
+                    <!-- Dynamic Notes Content -->
+                </section>
+
+                <!-- Global Milestones Section -->
+                <section id="section-milestones" class="view-section hidden">
+                     <!-- Dynamic Milestones Content -->
+                </section>
+
+                <!-- Goal Story Section -->
+                <section id="section-goal-story" class="view-section hidden">
+                    <!-- Dynamic Story Content -->
+                </section>
+
+                <!-- Failure Log Section -->
+                <section id="section-failure-log" class="view-section hidden">
+                    <!-- Dynamic Failure Log Content -->
+                </section>
+
+                <!-- Time Reality Section -->
+                <section id="section-time-reality-check" class="view-section hidden">
+                     <!-- Dynamic Time Reality Content -->
+                </section>
+
+                <!-- Fallback Loading -->
+                <div id="loading-state" class="hidden">Loading...</div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="modal-container" class="modal-overlay hidden">
+        <!-- Modal content will be injected here -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/models.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/countdown.js"></script>
+</body>
+</html>

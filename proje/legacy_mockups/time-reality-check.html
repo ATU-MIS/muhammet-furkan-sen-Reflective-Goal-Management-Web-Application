@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Comparison Table</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f8fafc;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 600px;
+            background: white;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        th {
+            background-color: #f1f5f9;
+            font-weight: 600;
+            color: #334155;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .diff-positive {
+            color: #ef4444; /* Red for delay */
+            font-weight: 600;
+        }
+        .diff-negative {
+            color: #10b981; /* Green for early */
+            font-weight: 600;
+        }
+        .diff-neutral {
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Goal</th>
+                <th>Estimated Date</th>
+                <th>Actual Date</th>
+                <th>Difference</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Learn React Basics</td>
+                <td>2025-12-01</td>
+                <td>2025-12-05</td>
+                <td class="diff-positive">+4 days</td>
+            </tr>
+            <tr>
+                <td>Setup Enviroment</td>
+                <td>2025-11-15</td>
+                <td>2025-11-15</td>
+                <td class="diff-neutral">0 days</td>
+            </tr>
+            <tr>
+                <td>Design Database</td>
+                <td>2026-01-10</td>
+                <td>2026-01-08</td>
+                <td class="diff-negative">-2 days</td>
+            </tr>
+            <tr>
+                <td>Write Documentation</td>
+                <td>2026-02-01</td>
+                <td>2026-02-10</td>
+                <td class="diff-positive">+9 days</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goal Details - My Goal Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <span class="sidebar-logo-icon">🚀</span>
+                <span>Goal Journey</span>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="sidebar-link">
+                    <span class="sidebar-icon">📊</span> Dashboard
+                </a>
+                <a href="profile.html" class="sidebar-link">
+                    <span class="sidebar-icon">👤</span> Create Profile
+                </a>
+                <a href="add-goal.html" class="sidebar-link">
+                    <span class="sidebar-icon">🎯</span> Add Goal
+                </a>
+                <a href="dashboard.html" class="sidebar-link">
+                    <span class="sidebar-icon">📝</span> My Goals
+                </a>
+                <a href="goal-detail.html" class="sidebar-link">
+                    <span class="sidebar-icon">🔍</span> Goal Details
+                </a>
+                <a href="notes.html" class="sidebar-link">
+                    <span class="sidebar-icon">📌</span> Notes
+                </a>
+                <a href="milestones.html" class="sidebar-link">
+                    <span class="sidebar-icon">🚩</span> Milestones
+                </a>
+                <a href="goal-story.html" class="sidebar-link">
+                    <span class="sidebar-icon">⏳</span> Goal Story
+                </a>
+                <a href="failure-log.html" class="sidebar-link">
+                    <span class="sidebar-icon">📉</span> Failure Log
+                </a>
+                <a href="time-reality-check.html" class="sidebar-link">
+                    <span class="sidebar-icon">⏱️</span> Time Reality Check
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content Wrapper -->
+        <div class="main-content-wrapper">
+            <!-- Header -->
+            <header class="main-header" style="justify-content: space-between;">
+                <button id="mobile-menu-toggle" class="mobile-menu-toggle">
+                    ☰
+                </button>
+                <div class="user-preview">
+                     <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span>Furkan</span>
+                        <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: bold; color: white;">F</div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="container">
+            <!-- Breadcrumb / Back -->
+            <div style="margin-bottom: 1rem;">
+                <a href="dashboard_mockup.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">← Back to Dashboard</a>
+            </div>
+
+            <!-- Goal Header & Info -->
+            <section class="goal-header" style="background: var(--bg-card); padding: 2rem; border-radius: 1rem; border: 1px solid var(--border-color); margin-bottom: 2rem;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                            <h2 style="font-size: 2rem; margin: 0;">Learn Full Stack Development</h2>
+                            <span style="background: rgba(99, 102, 241, 0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 999px; font-weight: 500;">ACTIVE</span>
+                        </div>
+                        <p style="color: var(--text-muted); max-width: 600px;">Master HTML, CSS, JS, Node.js, and Databases to build comprehensive web applications.</p>
+                        <div style="margin-top: 1rem; display: flex; gap: 0.5rem;">
+                            <span style="font-size: 0.8rem; background: var(--bg-card-hover); padding: 0.2rem 0.6rem; border-radius: 4px; color: var(--text-muted);">#coding</span>
+                            <span style="font-size: 0.8rem; background: var(--bg-card-hover); padding: 0.2rem 0.6rem; border-radius: 4px; color: var(--text-muted);">#career</span>
+                        </div>
+                    </div>
+
+                    <!-- Countdown Timer -->
+                    <div style="text-align: right; background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--border-color);">
+                        <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.25rem;">Time Remaining</div>
+                        <div style="font-size: 2rem; font-weight: 700; color: var(--text-main);">15d : 04h : 32m</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">Deadline: Jan 30, 2026</div>
+                    </div>
+                </div>
+            </section>
+
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+                
+                <!-- Left Column -->
+                <div style="display: flex; flex-direction: column; gap: 2rem;">
+                    
+                    <!-- Milestones -->
+                    <section style="background: var(--bg-card); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--border-color);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <h3>Milestones</h3>
+                            <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">+ Add Milestone</button>
+                        </div>
+                        <div class="progress-bar" style="height: 8px; background: var(--bg-card-hover); border-radius: 4px; margin-bottom: 1.5rem; overflow: hidden;">
+                            <div style="height: 100%; width: 40%; background: var(--success);"></div>
+                        </div>
+                        <div class="milestone-list">
+                            <!-- Items -->
+                            <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid var(--border-color);">
+                                <input type="checkbox" checked>
+                                <span style="text-decoration: line-through; color: var(--text-muted);">Learn HTML & CSS Basics</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid var(--border-color);">
+                                <input type="checkbox" checked>
+                                <span style="text-decoration: line-through; color: var(--text-muted);">Build a simple landing page</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid var(--border-color);">
+                                <input type="checkbox">
+                                <span>Learn DOM Manipulation</span>
+                            </div>
+                             <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0;">
+                                <input type="checkbox">
+                                <span>Build a simple CRUD app</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Story Timeline -->
+                    <section style="background: var(--bg-card); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--border-color);">
+                        <h3>Goal Story Timeline</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Your journey through time.</p>
+                        
+                        <div class="timeline" style="border-left: 2px solid var(--border-color); padding-left: 1.5rem; margin-left: 0.5rem;">
+                            <!-- Event 1 -->
+                            <div style="position: relative; margin-bottom: 2rem;">
+                                <div style="position: absolute; left: -29px; top: 2px; width: 12px; height: 12px; background: var(--primary); border-radius: 50%;"></div>
+                                <div style="font-size: 0.8rem; color: var(--text-muted);">Oct 15, 2025</div>
+                                <div style="font-weight: 600;">Started the Journey</div>
+                                <div style="font-size: 0.9rem; margin-top: 0.25rem;">"I'm excited to finally start learning web dev!"</div>
+                            </div>
+                            <!-- Event 2 -->
+                            <div style="position: relative; margin-bottom: 2rem;">
+                                <div style="position: absolute; left: -29px; top: 2px; width: 12px; height: 12px; background: var(--success); border-radius: 50%;"></div>
+                                <div style="font-size: 0.8rem; color: var(--text-muted);">Nov 01, 2025</div>
+                                <div style="font-weight: 600;">Milestone Completed</div>
+                                <div style="font-size: 0.9rem; margin-top: 0.25rem;">Finished HTML & CSS Basics.</div>
+                            </div>
+                             <!-- Event 3 -->
+                            <div style="position: relative; margin-bottom: 2rem;">
+                                <div style="position: absolute; left: -29px; top: 2px; width: 12px; height: 12px; background: var(--danger); border-radius: 50%;"></div>
+                                <div style="font-size: 0.8rem; color: var(--text-muted);">Dec 10, 2025</div>
+                                <div style="font-weight: 600;">Setback Encountered</div>
+                                <div style="font-size: 0.9rem; margin-top: 0.25rem;">Struggled with understanding Closures in JS. Taking a break to read more.</div>
+                            </div>
+                        </div>
+                    </section>
+
+                     <!-- Notes -->
+                    <section style="background: var(--bg-card); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--border-color);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <h3>Personal Notes</h3>
+                            <button class="btn btn-secondary" style="font-size: 0.8rem;">+ Add Note</button>
+                        </div>
+                        <div class="notes-grid" style="display: grid; gap: 1rem;">
+                            <div style="background: var(--bg-card-hover); padding: 1rem; border-radius: 0.5rem;">
+                                <p style="font-size: 0.95rem;">Remember to practice Flexbox froggy game again.</p>
+                                <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+                                    <span style="font-size: 0.8rem; color: var(--accent); display: flex; align-items: center; gap: 0.25rem;">
+                                        📎 flexbox-cheatsheet.pdf
+                                    </span>
+                                </div>
+                                <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">Added 2 days ago</div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- Right Column -->
+                <div style="display: flex; flex-direction: column; gap: 2rem;">
+                    
+                    <!-- Time Reality Check -->
+                    <section style="background: var(--bg-card); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--border-color);">
+                        <h3>Time Reality Check</h3>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">Compare your plan vs reality.</p>
+                        
+                        <table style="width: 100%; border-collapse: collapse; margin-bottom: 1rem;">
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 0.5rem 0; color: var(--text-muted);">Estimated</td>
+                                <td style="padding: 0.5rem 0; text-align: right; font-weight: 600;">100 Hrs</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.5rem 0; color: var(--text-muted);">Actual</td>
+                                <td style="padding: 0.5rem 0; text-align: right; font-weight: 600; color: var(--danger);">120 Hrs</td>
+                            </tr>
+                        </table>
+
+                        <!-- Visual Bar -->
+                        <div style="margin-bottom: 0.5rem; font-size: 0.8rem; display: flex; justify-content: space-between;">
+                            <span>Progress Visual</span>
+                            <span style="color: var(--danger);">+20% Over</span>
+                        </div>
+                        <div style="height: 10px; bg-color: var(--bg-card-hover); border-radius: 5px; background: rgba(255,255,255,0.1); position: relative; overflow: hidden;">
+                            <!-- Estimated (Base) -->
+                            <div style="position: absolute; top:0; left:0; width: 80%; height: 100%; background: var(--primary); opacity: 0.5;"></div>
+                            <!-- Actual (Overlay) -->
+                            <div style="position: absolute; top:0; left:0; width: 100%; height: 100%; background: transparent; border-right: 2px solid var(--danger);"></div>
+                             <div style="position: absolute; top:0; left:0; width: 95%; height: 100%; background: var(--danger); opacity: 0.3;"></div>
+                        </div>
+                        <button class="btn btn-secondary" style="width: 100%; margin-top: 1.5rem;">Log Hours</button>
+                    </section>
+
+                    <!-- Failure Log (Small Input) -->
+                     <section style="background: var(--bg-card); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--border-color);">
+                        <h3 style="color: var(--danger);">Failure Log</h3>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">Document setbacks to learn from them.</p>
+                        
+                         <div style="background: rgba(239, 68, 68, 0.1); padding: 1rem; border-radius: 0.5rem; border: 1px solid rgba(239, 68, 68, 0.2);">
+                             <h4 style="font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--danger);">Last Setback</h4>
+                             <p style="font-size: 0.9rem;">"Procrastinated for 3 days due to gaming."</p>
+                             <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">Jan 05, 2026</div>
+                         </div>
+                         
+                        <button class="btn" style="width: 100%; margin-top: 1rem; border: 1px solid var(--danger); color: var(--danger); background: transparent;">+ Log New Setback</button>
+                    </section>
+
+                </div>
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>

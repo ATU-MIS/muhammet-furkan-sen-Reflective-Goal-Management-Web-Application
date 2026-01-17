@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Failure Case - My Goal Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <header class="main-header">
+            <div class="logo">
+                <span class="logo-icon">🚀</span>
+                <h1>My Goal Journey</h1>
+            </div>
+        </header>
+
+        <main class="container" style="display: flex; justify-content: center; padding-top: 3rem;">
+            <div style="width: 100%; max-width: 500px; background: var(--bg-card); padding: 2rem; border-radius: 1rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-lg);">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">📉</div>
+                    <h2 style="color: var(--danger);">Log a Setback</h2>
+                    <p style="color: var(--text-muted);">It's okay. Analyzing failure is part of growth.</p>
+                </div>
+
+                <form id="failure-log-form">
+                    
+                    <!-- Predefined Reasons -->
+                    <div class="form-group">
+                        <label class="form-label" for="reason-select">Primary Reason</label>
+                        <select id="reason-select" class="form-input" required>
+                            <option value="" disabled selected>Select a reason...</option>
+                            <option value="time">Lack of Time / Busy Schedule</option>
+                            <option value="motivation">Loss of Motivation / Burnout</option>
+                            <option value="health">Health Issues</option>
+                            <option value="technical">Technical Difficulties / Lack of Resources</option>
+                            <option value="planning">Poor Planning / Unrealistic Goal</option>
+                            <option value="external">Unexpected External Events</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Explanation -->
+                    <div class="form-group">
+                        <label class="form-label" for="explanation">Explanation (Optional)</label>
+                        <textarea id="explanation" class="form-textarea" rows="4" placeholder="What happened? What can you learn from this?"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn" style="width: 100%; background-color: var(--danger); color: white; margin-top: 1rem;">Log Setback</button>
+                    <button type="button" class="btn btn-secondary" style="width: 100%; margin-top: 0.5rem;" onclick="history.back()">Cancel</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('failure-log-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const reason = document.getElementById('reason-select').value;
+            const explanation = document.getElementById('explanation').value;
+
+            if (!reason) {
+                alert("Please select a primary reason.");
+                return;
+            }
+
+            const btn = this.querySelector('button[type="submit"]');
+            btn.textContent = "Logging...";
+            
+            setTimeout(() => {
+                const logData = {
+                    reason: reason,
+                    explanation: explanation,
+                    date: new Date().toISOString()
+                };
+                
+                console.log("Failure Logged:", logData);
+                alert(`Setback logged. Reason: ${reason}\n\nDon't give up! Adjustment is key.`);
+                
+                // Reset
+                this.reset();
+                btn.textContent = "Log Setback";
+            }, 800);
+        });
+    </script>
+</body>
+</html>

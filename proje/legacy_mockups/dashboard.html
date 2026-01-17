@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Mockup - My Goal Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+</head>
+<body>
+    <div id="app">
+    <div id="app">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <span class="sidebar-logo-icon">🚀</span>
+                <span>Goal Journey</span>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="sidebar-link">
+                    <span class="sidebar-icon">📊</span> Dashboard
+                </a>
+                <a href="profile.html" class="sidebar-link">
+                    <span class="sidebar-icon">👤</span> Create Profile
+                </a>
+                <a href="add-goal.html" class="sidebar-link">
+                    <span class="sidebar-icon">🎯</span> Add Goal
+                </a>
+                <a href="dashboard.html" class="sidebar-link">
+                    <span class="sidebar-icon">📝</span> My Goals
+                </a>
+                <a href="goal-detail.html" class="sidebar-link">
+                    <span class="sidebar-icon">🔍</span> Goal Details
+                </a>
+                <a href="notes.html" class="sidebar-link">
+                    <span class="sidebar-icon">📌</span> Notes
+                </a>
+                <a href="milestones.html" class="sidebar-link">
+                    <span class="sidebar-icon">🚩</span> Milestones
+                </a>
+                <a href="goal-story.html" class="sidebar-link">
+                    <span class="sidebar-icon">⏳</span> Goal Story
+                </a>
+                <a href="failure-log.html" class="sidebar-link">
+                    <span class="sidebar-icon">📉</span> Failure Log
+                </a>
+                <a href="time-reality-check.html" class="sidebar-link">
+                    <span class="sidebar-icon">⏱️</span> Time Reality Check
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content Wrapper -->
+        <div class="main-content-wrapper">
+            <!-- Header -->
+            <header class="main-header" style="justify-content: space-between;">
+                <button id="mobile-menu-toggle" class="mobile-menu-toggle">
+                    ☰
+                </button>
+                
+                <div class="user-preview">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span>Furkan</span>
+                        <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: bold;">F</div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <main class="container">
+            <div class="dashboard-header" style="margin-bottom: 2rem;">
+                <h2>Hello, Furkan 👋</h2>
+                <p style="color: var(--text-muted);">Here is your progress overview.</p>
+            </div>
+            
+            <!-- Stats -->
+            <div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+                <div class="stat-card" style="background: var(--bg-card); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--border-color);">
+                    <h3 style="font-size: 2rem; color: var(--primary);">12</h3>
+                    <p style="color: var(--text-muted);">Total Goals</p>
+                </div>
+                <div class="stat-card" style="background: var(--bg-card); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--border-color);">
+                    <h3 style="font-size: 2rem; color: var(--success);">5</h3>
+                    <p style="color: var(--text-muted);">Completed</p>
+                </div>
+                <div class="stat-card" style="background: var(--bg-card); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--border-color);">
+                    <h3 style="font-size: 2rem; color: var(--warning);">7</h3>
+                    <p style="color: var(--text-muted);">In Progress</p>
+                </div>
+            </div>
+
+            <div class="section-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h3>Active Missions</h3>
+                <button class="btn btn-primary">+ New Goal</button>
+            </div>
+
+            <!-- Goal List (Grid) -->
+            <div class="goals-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+                
+                <!-- Mock Goal Card 1 -->
+                <div class="goal-card" style="background: var(--bg-card); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--border-color); cursor: pointer; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top:0; left:0; width: 4px; height: 100%; background: var(--primary);"></div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                        <h3 style="font-size: 1.25rem; font-weight: 600;">Learn Full Stack Development</h3>
+                        <span style="background: rgba(16, 185, 129, 0.1); color: var(--success); font-size: 0.75rem; padding: 0.2rem 0.5rem; border-radius: 999px;">ACTIVE</span>
+                    </div>
+                    
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Master HTML, CSS, JS, and Backend technologies to build complete apps.</p>
+                    
+                    <!-- Countdown & Progress -->
+                    <div style="margin-bottom: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; font-weight: 500;">
+                            <span>⏳</span>
+                            <span>15 days, 4 hours left</span>
+                        </div>
+                    </div>
+
+                    <div class="progress-container">
+                        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 0.5rem; color: var(--text-muted);">
+                            <span>Progress</span>
+                            <span>65%</span>
+                        </div>
+                        <div style="height: 6px; background: var(--bg-card-hover); border-radius: 3px; overflow: hidden;">
+                            <div style="height: 100%; width: 65%; background: var(--primary);"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mock Goal Card 2 -->
+                <div class="goal-card" style="background: var(--bg-card); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--border-color); cursor: pointer; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top:0; left:0; width: 4px; height: 100%; background: var(--accent);"></div>
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                        <h3 style="font-size: 1.25rem; font-weight: 600;">Run a Marathon</h3>
+                         <span style="background: rgba(16, 185, 129, 0.1); color: var(--success); font-size: 0.75rem; padding: 0.2rem 0.5rem; border-radius: 999px;">ACTIVE</span>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Train for 42km race. Weekly running schedule.</p>
+                    
+                    <div style="margin-bottom: 1rem;">
+                         <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; font-weight: 500;">
+                            <span>⏳</span>
+                            <span>64 days left</span>
+                        </div>
+                    </div>
+
+                    <div class="progress-container">
+                        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 0.5rem; color: var(--text-muted);">
+                            <span>Progress</span>
+                            <span>30%</span>
+                        </div>
+                        <div style="height: 6px; background: var(--bg-card-hover); border-radius: 3px; overflow: hidden;">
+                            <div style="height: 100%; width: 30%; background: var(--accent);"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+            </main>
+        </div>
+    </div>
+    <script src="js/ui-sidebar.js"></script>
+</body>
+</html>

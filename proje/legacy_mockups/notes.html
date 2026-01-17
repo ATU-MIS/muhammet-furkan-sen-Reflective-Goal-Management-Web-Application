@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Personal Note - My Goal Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .file-list {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .file-item {
+            background: var(--bg-card-hover);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            animation: fadeIn 0.3s ease;
+        }
+        .file-remove {
+            color: var(--danger);
+            cursor: pointer;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+        .custom-file-upload {
+            border: 1px dashed var(--border-color);
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            border-radius: 0.5rem;
+            color: var(--text-muted);
+            transition: all 0.2s;
+            width: 100%;
+            text-align: center;
+        }
+        .custom-file-upload:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: rgba(99, 102, 241, 0.05);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header class="main-header">
+            <div class="logo">
+                <span class="logo-icon">🚀</span>
+                <h1>My Goal Journey</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="nav-btn">Dashboard</button>
+                <button class="nav-btn active">My Goals</button>
+                <button class="nav-btn">Profile</button>
+            </nav>
+        </header>
+
+        <main class="container" style="display: flex; justify-content: center; padding-top: 3rem;">
+            <div style="width: 100%; max-width: 600px; background: var(--bg-card); padding: 2rem; border-radius: 1rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-lg);">
+                <h2 style="margin-bottom: 1.5rem;">Add Note to Goal</h2>
+                <div style="margin-bottom: 1.5rem; font-size: 0.9rem; color: var(--text-muted);">
+                    Goal: <span style="color: var(--primary); font-weight: 500;">Learn Full Stack Development</span>
+                </div>
+                
+                <form id="add-note-form">
+                    <!-- Note Content -->
+                    <div class="form-group">
+                        <label class="form-label" for="note-content">Note Content</label>
+                        <textarea id="note-content" class="form-textarea" rows="6" placeholder="Write your thoughts, ideas, or progress updates..." required></textarea>
+                    </div>
+
+                    <!-- File Upload -->
+                    <div class="form-group">
+                        <label class="form-label">Attachments</label>
+                        <label for="file-upload" class="custom-file-upload">
+                            <span>📎 Click for Attach Files (PDF, Word, Images, Text)</span>
+                        </label>
+                        <input id="file-upload" type="file" multiple accept=".pdf, .doc, .docx, .txt, .jpg, .jpeg, .png" style="display:none;">
+                        
+                        <div id="selected-files" class="file-list">
+                            <!-- Selected files will appear here -->
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                         <button type="button" class="btn btn-secondary" style="flex: 1;" onclick="history.back()">Cancel</button>
+                        <button type="submit" class="btn btn-primary" style="flex: 1;">Save Note</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('file-upload');
+        const fileList = document.getElementById('selected-files');
+        let selectedFiles = []; // Store File objects
+
+        fileInput.addEventListener('change', function(e) {
+            const files = Array.from(e.target.files);
+            
+            files.forEach(file => {
+                // simple dupe check by name
+                if(!selectedFiles.some(f => f.name === file.name)) {
+                    selectedFiles.push(file);
+                }
+            });
+            
+            renderFileList();
+            // Reset input so same file can be selected again if deleted and added back
+            this.value = ''; 
+        });
+
+        function renderFileList() {
+            fileList.innerHTML = '';
+            selectedFiles.forEach((file, index) => {
+                const div = document.createElement('div');
+                div.className = 'file-item';
+                div.innerHTML = `
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span>📄</span>
+                        <span style="font-weight: 500;">${file.name}</span>
+                        <span style="font-size: 0.8rem; color: var(--text-muted);">(${(file.size / 1024).toFixed(1)} KB)</span>
+                    </div>
+                    <div class="file-remove" onclick="removeFile(${index})">&times;</div>
+                `;
+                fileList.appendChild(div);
+            });
+        }
+
+        // Exposed function for inline onclick
+        window.removeFile = function(index) {
+            selectedFiles.splice(index, 1);
+            renderFileList();
+        }
+
+        document.getElementById('add-note-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const content = document.getElementById('note-content').value;
+            if(!content.trim()) {
+                alert("Please write some content.");
+                return;
+            }
+
+            const btn = this.querySelector('button[type="submit"]');
+            btn.textContent = "Saving...";
+            
+            setTimeout(() => {
+                alert(`Note Saved!\nFiles attached: ${selectedFiles.length}`);
+                // Clear form
+                document.getElementById('note-content').value = '';
+                selectedFiles = [];
+                renderFileList();
+                btn.textContent = "Save Note";
+            }, 800);
+        });
+    </script>
+</body>
+</html>
